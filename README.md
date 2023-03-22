@@ -1,1 +1,3 @@
+#  NAME : - RAISUN LAKRA
 # python-assignments
+# ASSIGNMENT : - 1. WARM UP WITH PYTHON (TOTAL QUESTION = 10)
