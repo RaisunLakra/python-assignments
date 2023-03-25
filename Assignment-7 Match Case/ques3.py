@@ -19,40 +19,41 @@ while True:
 
     option = input().lower()
 
-    if option == "a":
-        try:
-            a = int(input("Enter side 1: "))
-            b = int(input("Enter side 2: "))
-            c = int(input("Enter side 3: "))
-            if a == b != c or a != b == c or a != c == b:
-                print("The sides form an isosceles triangle.")
-            else:
-                print("The sides do not form an isosceles triangle.")
-        except ValueError:
-            print(colored("Invalid input. Please try again.", "red", attrs=["underline"]))
-    elif option == "b":
-        try:
-            a = int(input("Enter side 1: "))
-            b = int(input("Enter side 2: "))
-            c = int(input("Enter side 3: "))
-            if a ** 2 + b ** 2 == c ** 2 or a ** 2 == b ** 2 + c ** 2 or a ** 2 + c ** 2 == b ** 2:
-                print("The sides form a right-angled triangle.")
-            else:
-                print("The sides do not form a right-angled triangle.")
-        except ValueError:
-            print(colored("Invalid input. Please try again.", "red", attrs=["underline"]))
-    elif option == "c":
-        try:
-            a = int(input("Enter side 1: "))
-            b = int(input("Enter side 2: "))
-            c = int(input("Enter side 3: "))
-            if a == b == c:
-                print("The sides form an equilateral triangle.")
-            else:
-                print("The sides do not form an equilateral triangle.")
-        except ValueError:
-            print(colored("Invalid input. Please try again.", "red", attrs=["underline"]))
-    elif option == "d":
-        exit()
-    else:
-        print(colored("Invalid option. Please try again.", "red", attrs=["underline"]))
+    match option:
+        case "a":
+            try:
+                a = int(input("Enter side 1: "))
+                b = int(input("Enter side 2: "))
+                c = int(input("Enter side 3: "))
+                if a == b != c or a != b == c or a != c == b:
+                    print("Isosceles triangle.")
+                else:
+                    print("The sides do not form an isosceles triangle.")
+            except ValueError:
+                print(colored("Invalid input. Please try again.", "red", attrs=["underline"]))
+        case "b":
+            try:
+                a = int(input("Enter side 1: "))
+                b = int(input("Enter side 2: "))
+                c = int(input("Enter side 3: "))
+                if a ** 2 + b ** 2 == c ** 2 or a ** 2 == b ** 2 + c ** 2 or a ** 2 + c ** 2 == b ** 2:
+                    print("Right-angled triangle.")
+                else:
+                    print("The sides do not form a right-angled triangle.")
+            except ValueError:
+                print(colored("Invalid input. Please try again.", "red", attrs=["underline"]))
+        case "c":
+            try:
+                a = int(input("Enter side 1: "))
+                b = int(input("Enter side 2: "))
+                c = int(input("Enter side 3: "))
+                if a == b == c:
+                    print("Equilateral triangle.")
+                else:
+                    print("The sides do not form an equilateral triangle.")
+            except ValueError:
+                print(colored("Invalid input. Please try again.", "red", attrs=["underline"]))
+        case "d":
+            exit()
+        case _:
+            print(colored("Invalid option. Please try again.", "red", attrs=["underline"]))
